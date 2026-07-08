@@ -12,15 +12,18 @@ function calcularIndividual() {
     else if (formIndividual.vuelo.value == "ida") {
         total += 2499;
     }
-    // === REQUISITO 3A: Programar la condición para "ida-vuelta" ($5,999 MXN) ===
-
+    else if (formIndividual.vuelo.value == "ida-vuelta") {
+        total += 5999;
+    }
 
     // 2. LÓGICA DE HOSPEDAJE (Ya completa)
     if (formIndividual.hospedaje.value == "sin-hotel") {
         total += 499;
-    } else if (formIndividual.hospedaje.value == "sencilla") {
+    } 
+    else if (formIndividual.hospedaje.value == "sencilla") {
         total += 799;
-    } else if (formIndividual.hospedaje.value == "doble") {
+    } 
+    else if (formIndividual.hospedaje.value == "doble") {
         total += 999;
     }
 
@@ -34,6 +37,7 @@ function calcularIndividual() {
         alert("Escriba un número de días válido en la sección Individual");
         return;
     }
+
     total += parseInt(formIndividual.diasIndividual.value) * 769;
 
     // Despliegue del resultado formateado en pesos
@@ -47,7 +51,8 @@ function calcularPaquetes() {
 
     if (formPaquetes.destino.value == "europa") {
         total += 21999;
-    } else if (formPaquetes.destino.value == "asia") {
+    } 
+    else if (formPaquetes.destino.value == "asia") {
         total += 25999;
     }
 
@@ -55,6 +60,7 @@ function calcularPaquetes() {
         alert("Escriba un número de días válido en la sección de Paquetes");
         return;
     }
+
     total += parseInt(formPaquetes.diasPaquete.value) * 899;
 
     formPaquetes.totalPaquetes.value = "$" + total.toLocaleString('es-MX') + " MXN";
